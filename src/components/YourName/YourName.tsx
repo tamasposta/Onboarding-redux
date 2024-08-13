@@ -4,8 +4,13 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { setName } from "../../redux/profile.slice";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
+import { SetCurrentComponentType } from "./YourName.types";
 
-export default function YourName({ setCurrentComponent }: any) {
+export default function YourName({
+  setCurrentComponent,
+}: {
+  setCurrentComponent: SetCurrentComponentType;
+}) {
   const [nameState, setNameState] = useState<string>("");
   const dispatch = useDispatch();
 
@@ -32,7 +37,9 @@ export default function YourName({ setCurrentComponent }: any) {
         id="standard-basic"
         label="Your Name"
         variant="standard"
-        onChange={(event) => setNameState(event.target.value)}
+        onChange={(
+          event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+        ) => setNameState(event.target.value)}
       />
       <Button
         variant="contained"

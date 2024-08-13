@@ -3,10 +3,16 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { useDispatch, useSelector } from "react-redux";
 import { setEmail } from "../../redux/profile.slice";
 import { useState } from "react";
+import { SetCurrentComponentType } from "../YourName/YourName.types";
+import { RootState } from "../../redux/store";
 
-export default function YourEmail({ setCurrentComponent }: any) {
+export default function YourEmail({
+  setCurrentComponent,
+}: {
+  setCurrentComponent: SetCurrentComponentType;
+}) {
   const [emailState, setEmailState] = useState<string>("");
-  const profile = useSelector((state) => (state as any).profile);
+  const profile = useSelector((state: RootState) => state).profile);
   const dispatch = useDispatch();
 
   const handleSubmit = () => {
@@ -34,7 +40,7 @@ export default function YourEmail({ setCurrentComponent }: any) {
         id="standard-basic"
         label="Your Email"
         variant="standard"
-        onChange={(event) => setEmailState(event.target.value)}
+        onChange={(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setEmailState(event.target.value)}
       />
       <Button
         variant="contained"

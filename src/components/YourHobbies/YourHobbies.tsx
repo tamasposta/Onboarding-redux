@@ -4,10 +4,16 @@ import { useSelector, useDispatch } from "react-redux";
 import HobbyCheckbox from "./components/HobbyCheckbox";
 import { setHobbies } from "../../redux/profile.slice";
 import { hobbies } from "./utils/hobbies";
+import { SetCurrentComponentType } from "../YourName/YourName.types";
+import { RootState } from "../../redux/store";
 
-export default function YourHobbies({ setCurrentComponent }: any) {
+export default function YourHobbies({
+  setCurrentComponent,
+}: {
+  setCurrentComponent: SetCurrentComponentType;
+}) {
   const dispatch = useDispatch();
-  const profile = useSelector((state) => (state as any).profile);
+  const profile = useSelector((state: RootState) => state.profile);
 
   const handleSubmit = () => {
     setCurrentComponent("yourBirthday");
