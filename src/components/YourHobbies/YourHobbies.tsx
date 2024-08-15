@@ -4,8 +4,9 @@ import { useSelector, useDispatch } from "react-redux";
 import HobbyCheckbox from "./components/HobbyCheckbox";
 import { setHobbies } from "../../redux/profile.slice";
 import { hobbies } from "./utils/hobbies";
-import { SetCurrentComponentType } from "../YourName/YourName.types";
+import { SetCurrentComponentType } from "../ProfileCreation.types";
 import { RootState } from "../../redux/store";
+import { Hobbies } from "../ProfileCreation.types";
 
 export default function YourHobbies({
   setCurrentComponent,
@@ -21,7 +22,7 @@ export default function YourHobbies({
 
   const handleCheckboxChange = (value: string) => {
     const updatedHobbies = profile.hobbies.includes(value)
-      ? profile.hobbies.filter((hobby: any) => hobby !== value)
+      ? profile.hobbies.filter((hobby: string) => hobby !== value)
       : [...profile.hobbies, value];
     dispatch(setHobbies(updatedHobbies));
   };
@@ -45,7 +46,7 @@ export default function YourHobbies({
       </Typography>
       <Box sx={{ display: "flex", flexFlow: "column wrap" }}>
         <FormGroup>
-          {hobbies.map((hobby) => (
+          {hobbies.map((hobby: Hobbies) => (
             <HobbyCheckbox
               key={hobby.value}
               label={hobby.label}

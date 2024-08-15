@@ -1,6 +1,6 @@
-import { Hobbies } from "../YourHobbies.types";
+import { Hobbies } from "../../ProfileCreation.types";
 
-export const hobbies: Hobbies = [
+export const hobbies: Hobbies[] = [
   { label: "Gym", value: "gym" },
   { label: "Biking", value: "biking" },
   { label: "Skiing", value: "skiing" },

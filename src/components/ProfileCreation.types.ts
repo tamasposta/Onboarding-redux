@@ -1,7 +1,7 @@
 export type Hobbies = {
   label: string;
   value: string;
-}[];
+};
 
 export type HobbyCheckboxProps = {
   label: string;
@@ -9,3 +9,7 @@ export type HobbyCheckboxProps = {
   checked: boolean;
   onChange: (value: string) => void;
 };
+
+export type SetCurrentComponentType = React.Dispatch<
+  React.SetStateAction<string>
+>;

@@ -4,7 +4,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { setName } from "../../redux/profile.slice";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { SetCurrentComponentType } from "./YourName.types";
+import { SetCurrentComponentType } from "../ProfileCreation.types";
 
 export default function YourName({
   setCurrentComponent,

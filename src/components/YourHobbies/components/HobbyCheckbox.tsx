@@ -1,12 +1,12 @@
 import { Checkbox, FormControlLabel } from "@mui/material";
-import { HobbyCheckboxProps } from "../YourHobbies.types";
+import { HobbyCheckboxProps } from "../../ProfileCreation.types";
 
 const HobbyCheckbox: React.FC<HobbyCheckboxProps> = ({
   label,
   checked,
   onChange,
 }) => {
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = () => {
     onChange(label);
   };
 

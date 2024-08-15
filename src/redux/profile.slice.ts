@@ -1,10 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
+import dayjs from "dayjs";
 
 export type ProfileState = {
   name: string;
   email: string;
   hobbies: string[];
-  birthday: Date | string;
+  birthday: Date | dayjs.Dayjs | string;
 };
 
 const initialState: ProfileState = {
